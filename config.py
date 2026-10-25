@@ -24,7 +24,8 @@ LOG_PATH  = RAIZ / "logs" / "sistema_agente.log"
 
 # ─── API y modelo ─────────────────────────────────────────────────────────────
 GEMINI_KEY  = os.getenv("GEMINI_API_KEY", "")
-MODELO_LLM  = "gemini-3.6-flash"
+MODELO_LLM          = "gemini-3.6-flash"   # Modelo primario
+MODELO_LLM_FALLBACK = "gemini-2.0-flash"   # Respaldo automático si se agota el cupo
 
 # ─── Parámetros del agente ────────────────────────────────────────────────────
 MAX_PASOS       = 10      # Máximo de ciclos ReAct por consulta

@@ -10,7 +10,7 @@ evalúa proveedores, ajusta presupuestos y genera órdenes de compra en PDF.
 
 ```
 inventario_agente/
-├── app.py              # UI Streamlit con 4 pestañas
+├── app.py              # UI Streamlit con 5 pestañas (Consola · Visor Transaccional · Auditoría · Gestión de Órdenes · Arquitectura)
 ├── agent_core.py       # Bucle ReAct + integración Gemini
 ├── tools.py            # 6 herramientas del agente
 ├── init_db.py          # Inicialización y reset de la BD

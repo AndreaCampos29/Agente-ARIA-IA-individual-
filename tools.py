@@ -9,6 +9,7 @@ import json
 import time
 from datetime import datetime
 import contextlib
+import difflib
 
 from loguru import logger
 from reportlab.lib.pagesizes import A4
@@ -246,7 +247,68 @@ def auditar_bd() -> dict:
         return {"error": str(e), "anomalias": [], "total_anomalias": 0, "corregidas": 0}
 
 
-# ─── Herramienta 4 ───────────────────────────────────────────────────────────
+# ─── Herramienta 4 — RF04 ───────────────────────────────────────────────────
+
+def detectar_duplicados(umbral: float = 0.85) -> dict:
+    """
+    Detecta productos duplicados con nombres similares usando similitud de texto.
+    Algoritmo: SequenceMatcher (difflib, stdlib — sin dependencias externas).
+    Umbral por defecto 0.85 (85%% de similitud). Retorna grupos para revisión.
+    """
+    inicio = time.time()
+    try:
+        with _con() as con:
+            filas = con.execute(
+                "SELECT id, nombre FROM productos WHERE estado != 'Inactivo' ORDER BY id"
+            ).fetchall()
+
+        productos = [(f["id"], f["nombre"]) for f in filas]
+        grupos  = []
+        visitados = set()
+
+        for i, (id_a, nom_a) in enumerate(productos):
+            if id_a in visitados:
+                continue
+            grupo = [{"id": id_a, "nombre": nom_a}]
+            for id_b, nom_b in productos[i + 1:]:
+                if id_b in visitados:
+                    continue
+                ratio = difflib.SequenceMatcher(
+                    None,
+                    nom_a.lower().strip(),
+                    nom_b.lower().strip()
+                ).ratio()
+                if ratio >= umbral:
+                    grupo.append({"id": id_b, "nombre": nom_b,
+                                  "similitud": round(ratio, 3)})
+                    visitados.add(id_b)
+            if len(grupo) > 1:
+                visitados.add(id_a)
+                grupos.append(grupo)
+
+        resultado = {
+            "grupos_duplicados": grupos,
+            "total_grupos":      len(grupos),
+            "total_afectados":   sum(len(g) for g in grupos),
+            "umbral_usado":      umbral,
+            "estado":            (
+                f"{len(grupos)} grupo(s) de posibles duplicados detectados"
+                if grupos else "Sin duplicados detectados"
+            )
+        }
+
+        latencia = time.time() - inicio
+        _alertar_latencia("detectar_duplicados", latencia * 1000)
+        _registrar("detectar_duplicados", {"umbral": umbral},
+                   json.dumps(resultado, ensure_ascii=False), latencia)
+        return resultado
+
+    except Exception as e:
+        logger.error(f"[detectar_duplicados] {e}")
+        return {"error": str(e), "grupos_duplicados": [], "total_grupos": 0}
+
+
+# ─── Herramienta 5 ───────────────────────────────────────────────────────────
 
 def ajustar_presupuesto(monto_max: float) -> dict:
     """

@@ -360,3 +360,312 @@
 2026-08-31 23:32:41 | INFO     | [ReAct] Completado: 0 paso(s) | 7659.5ms total
 2026-08-31 23:36:17 | INFO     | [ReAct] Consulta: 'si necesito ayuda'
 2026-08-31 23:36:24 | INFO     | [ReAct] Completado: 0 paso(s) | 6247.1ms total
+2026-10-16 01:18:46 | INFO     | [crear_agente] Cliente inicializado | modelo: gemini-3.6-flash
+2026-10-16 01:18:47 | INFO     | [crear_agente] Cliente inicializado | modelo: gemini-3.6-flash
+2026-10-24 22:44:57 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-24 22:45:26 | INFO     | [crear_agente] Cliente inicializado | modelo: gemini-3.6-flash
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 4.6ms
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 4.1ms
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 4.2ms
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 3.6ms
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 3.7ms
+2026-10-24 23:31:52 | INFO     | [analizar_agotamiento] OK | 3.4ms
+2026-10-24 23:31:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-24 23:31:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-24 23:31:52 | INFO     | [auditar_bd] OK | 11.7ms
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 12.5ms
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 11.3ms
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 11.1ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 4.6ms
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-24 23:31:53 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 10.2ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 26.1ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 17.6ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 4.7ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 18.1ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 16.0ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 3.3ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 15.0ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 14.7ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 15.5ms
+2026-10-24 23:31:53 | INFO     | [generar_pdf] OK | 21.4ms
+2026-10-24 23:31:53 | INFO     | [generar_pdf] OK | 16.4ms
+2026-10-24 23:31:53 | INFO     | [generar_pdf] OK | 15.1ms
+2026-10-24 23:31:53 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 3.3ms
+2026-10-24 23:31:53 | INFO     | [auditar_bd] OK | 3.1ms
+2026-10-24 23:31:53 | INFO     | [ajustar_presupuesto] OK | 15.9ms
+2026-10-24 23:31:53 | INFO     | [evaluar_proveedores] OK | 3.5ms
+2026-10-24 23:31:53 | INFO     | [actualizar_inventario] OK | 3.4ms
+2026-10-24 23:31:53 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-24 23:31:53 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-24 23:31:53 | INFO     | [evaluar_proveedores] OK | 1.3ms
+2026-10-24 23:31:53 | INFO     | [evaluar_proveedores] OK | 4.0ms
+2026-10-24 23:31:53 | INFO     | [evaluar_proveedores] OK | 3.4ms
+2026-10-24 23:37:41 | INFO     | [crear_agente] Cliente inicializado | modelo: gemini-3.6-flash
+2026-10-24 23:53:25 | INFO     | [ReAct] Consulta: 'Analiza el inventario completo y dime qué productos están en riesgo de agotarse ...'
+2026-10-24 23:53:28 | INFO     | [analizar_agotamiento] OK | 2.4ms
+2026-10-24 23:53:32 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 12
+2026-10-24 23:53:32 | WARNING  | [auditar_bd] Precio inválido en producto ID 17
+2026-10-24 23:53:32 | INFO     | [auditar_bd] OK | 17.6ms
+2026-10-24 23:53:34 | INFO     | [analizar_agotamiento] OK | 6.0ms
+2026-10-24 23:53:40 | INFO     | [ReAct] Completado: 3 paso(s) | 14203.5ms total
+2026-10-25 00:11:08 | INFO     | [ReAct] Consulta: 'Busca productos duplicados en la base de datos.
+'
+2026-10-25 00:11:10 | INFO     | [detectar_duplicados] OK | 5.4ms
+2026-10-25 00:11:13 | INFO     | [detectar_duplicados] OK | 8.3ms
+2026-10-25 00:11:15 | INFO     | [ReAct] Completado: 2 paso(s) | 6868.2ms total
+2026-10-25 00:12:02 | INFO     | [ReAct] Consulta: '¿Cuál es el mejor proveedor para el Refresco Coca Cola (ID 11) por tiempo de ent...'
+2026-10-25 00:12:08 | INFO     | [ReAct] Completado: 2 paso(s) | 5634.2ms total
+2026-10-25 00:13:49 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-25 00:20:28 | INFO     | [ReAct] Consulta: 'Audita la base de datos, analiza qué productos se agotan 
+en los próximos 14 día...'
+2026-10-25 00:20:31 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:20:31 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:20:31 | INFO     | [auditar_bd] OK | 16.6ms
+2026-10-25 00:20:31 | INFO     | [analizar_agotamiento] OK | 8.8ms
+2026-10-25 00:20:31 | INFO     | [detectar_duplicados] OK | 10.5ms
+2026-10-25 00:20:36 | INFO     | [ReAct] Completado: 1 paso(s) | 7078.3ms total
+2026-10-25 00:20:59 | INFO     | [ReAct] Consulta: '¿Cuál es el mejor proveedor para el producto 1 por tiempo de entrega?'
+2026-10-25 00:21:12 | INFO     | [evaluar_proveedores] OK | 3.6ms
+2026-10-25 00:21:16 | INFO     | [ReAct] Completado: 1 paso(s) | 17616.8ms total
+2026-10-25 00:21:42 | INFO     | [ReAct] Consulta: '¿Cuál es el proveedor más barato para el producto 2?'
+2026-10-25 00:21:43 | INFO     | [evaluar_proveedores] OK | 2.7ms
+2026-10-25 00:21:45 | INFO     | [ReAct] Completado: 1 paso(s) | 3158.5ms total
+2026-10-25 00:22:00 | INFO     | [ReAct] Consulta: 'Genera la orden de compra para los productos críticos 
+al proveedor con mejor ca...'
+2026-10-25 00:22:04 | INFO     | [evaluar_proveedores] OK | 2.2ms
+2026-10-25 00:22:04 | INFO     | [evaluar_proveedores] OK | 6.3ms
+2026-10-25 00:22:04 | INFO     | [evaluar_proveedores] OK | 8.6ms
+2026-10-25 00:22:04 | INFO     | [evaluar_proveedores] OK | 7.7ms
+2026-10-25 00:22:07 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-25 00:22:07 | INFO     | [ajustar_presupuesto] OK | 24.6ms
+2026-10-25 00:22:13 | INFO     | [generar_pdf] OK | 40.3ms
+2026-10-25 00:22:17 | INFO     | [ReAct] Completado: 3 paso(s) | 16722.1ms total
+2026-10-25 00:23:05 | INFO     | [ReAct] Consulta: 'Reabastece los productos faltantes pero el presupuesto 
+máximo es $100. Ajusta l...'
+2026-10-25 00:23:07 | INFO     | [auditar_bd] OK | 4.4ms
+2026-10-25 00:23:07 | INFO     | [ajustar_presupuesto] OK | 23.6ms
+2026-10-25 00:23:09 | INFO     | [evaluar_proveedores] OK | 5.5ms
+2026-10-25 00:23:11 | INFO     | [generar_pdf] OK | 25.8ms
+2026-10-25 00:23:11 | ERROR    | [ReAct] Error inesperado: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.\nPlease retry in 2h36m48.847250365s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'description': 'Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.', 'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.6-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9408s'}]}}
+2026-10-25 00:23:34 | INFO     | [ReAct] Consulta: 'Reabastece los productos faltantes pero el presupuesto 
+máximo es $100. Ajusta l...'
+2026-10-25 00:23:35 | ERROR    | [ReAct] Error inesperado: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.\nPlease retry in 2h36m25.27770963s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'description': 'Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.', 'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.6-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9385s'}]}}
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 3.5ms
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 4.2ms
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 3.6ms
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 4.0ms
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 3.9ms
+2026-10-25 00:33:28 | INFO     | [analizar_agotamiento] OK | 3.1ms
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 10.3ms
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 11.4ms
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 11.7ms
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 11.2ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 4.8ms
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 00:33:28 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 12.3ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 32.9ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 4.9ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 17.2ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 3.6ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 16.4ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 3.2ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 16.4ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 3.6ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 17.1ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 3.7ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 16.4ms
+2026-10-25 00:33:28 | INFO     | [auditar_bd] OK | 4.3ms
+2026-10-25 00:33:28 | INFO     | [ajustar_presupuesto] OK | 17.5ms
+2026-10-25 00:33:28 | INFO     | [generar_pdf] OK | 20.3ms
+2026-10-25 00:33:28 | INFO     | [generar_pdf] OK | 18.4ms
+2026-10-25 00:33:29 | INFO     | [generar_pdf] OK | 14.9ms
+2026-10-25 00:33:29 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 00:33:29 | INFO     | [auditar_bd] OK | 3.7ms
+2026-10-25 00:33:29 | INFO     | [auditar_bd] OK | 4.6ms
+2026-10-25 00:33:29 | INFO     | [ajustar_presupuesto] OK | 17.1ms
+2026-10-25 00:33:29 | INFO     | [evaluar_proveedores] OK | 3.0ms
+2026-10-25 00:33:29 | INFO     | [actualizar_inventario] OK | 3.5ms
+2026-10-25 00:33:29 | INFO     | [analizar_agotamiento] OK | 1.0ms
+2026-10-25 00:33:29 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 00:33:29 | INFO     | [evaluar_proveedores] OK | 1.3ms
+2026-10-25 00:33:29 | INFO     | [evaluar_proveedores] OK | 3.8ms
+2026-10-25 00:33:29 | INFO     | [evaluar_proveedores] OK | 3.7ms
+2026-10-25 00:35:59 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:47:52 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:48:14 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:48:38 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:49:23 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-25 00:50:06 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:50:32 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:51:39 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:56:47 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-25 00:58:07 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 00:58:33 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 3.6ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 3.1ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 4.7ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 4.7ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 3.5ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 3.6ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 4.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 5.0ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 4.5ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 3.9ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 4.3ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 3.5ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.3ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 1.7ms
+2026-10-25 01:04:10 | INFO     | [generar_pdf] OK | 21.3ms
+2026-10-25 01:04:10 | INFO     | [generar_pdf] OK | 19.4ms
+2026-10-25 01:04:10 | INFO     | [generar_pdf] OK | 14.2ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-25 01:04:10 | INFO     | [auditar_bd] OK | 3.5ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 0.9ms
+2026-10-25 01:04:10 | INFO     | [analizar_agotamiento] OK | 1.0ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 4.1ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 3.4ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 3.7ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 4.0ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 4.4ms
+2026-10-25 01:05:44 | INFO     | [analizar_agotamiento] OK | 3.4ms
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:05:44 | INFO     | [auditar_bd] OK | 11.6ms
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:05:44 | INFO     | [auditar_bd] OK | 9.3ms
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:05:44 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:05:44 | INFO     | [auditar_bd] OK | 10.9ms
+2026-10-25 01:05:45 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:05:45 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 12.5ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 4.1ms
+2026-10-25 01:05:45 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:05:45 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 11.4ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 27.1ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.5ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 15.0ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 14.0ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.5ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 16.1ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 15.6ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 4.5ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 16.1ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.7ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 15.4ms
+2026-10-25 01:05:45 | INFO     | [generar_pdf] OK | 20.1ms
+2026-10-25 01:05:45 | INFO     | [generar_pdf] OK | 17.5ms
+2026-10-25 01:05:45 | INFO     | [generar_pdf] OK | 14.2ms
+2026-10-25 01:05:45 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 2.9ms
+2026-10-25 01:05:45 | INFO     | [auditar_bd] OK | 3.9ms
+2026-10-25 01:05:45 | INFO     | [ajustar_presupuesto] OK | 15.9ms
+2026-10-25 01:05:45 | INFO     | [evaluar_proveedores] OK | 3.3ms
+2026-10-25 01:05:45 | INFO     | [actualizar_inventario] OK | 3.5ms
+2026-10-25 01:05:45 | INFO     | [analizar_agotamiento] OK | 1.0ms
+2026-10-25 01:05:45 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 01:05:45 | INFO     | [evaluar_proveedores] OK | 1.2ms
+2026-10-25 01:05:45 | INFO     | [evaluar_proveedores] OK | 3.6ms
+2026-10-25 01:05:45 | INFO     | [evaluar_proveedores] OK | 3.3ms
+2026-10-25 01:05:52 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 4.4ms
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 3.2ms
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 4.3ms
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 3.4ms
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 3.6ms
+2026-10-25 01:10:51 | INFO     | [analizar_agotamiento] OK | 4.4ms
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 11.7ms
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 11.3ms
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 10.6ms
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 11.0ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 01:10:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 11.6ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 25.5ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 4.4ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 16.6ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 3.3ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 14.7ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 3.3ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 14.3ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 3.3ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 15.7ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 3.9ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 16.6ms
+2026-10-25 01:10:51 | INFO     | [auditar_bd] OK | 3.9ms
+2026-10-25 01:10:51 | INFO     | [ajustar_presupuesto] OK | 15.4ms
+2026-10-25 01:10:52 | INFO     | [generar_pdf] OK | 22.1ms
+2026-10-25 01:10:52 | INFO     | [generar_pdf] OK | 17.1ms
+2026-10-25 01:10:52 | INFO     | [generar_pdf] OK | 15.3ms
+2026-10-25 01:10:52 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 01:10:52 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-25 01:10:52 | INFO     | [auditar_bd] OK | 3.4ms
+2026-10-25 01:10:52 | INFO     | [ajustar_presupuesto] OK | 14.2ms
+2026-10-25 01:10:52 | INFO     | [evaluar_proveedores] OK | 3.3ms
+2026-10-25 01:10:52 | INFO     | [actualizar_inventario] OK | 3.5ms
+2026-10-25 01:10:52 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 01:10:52 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 01:10:52 | INFO     | [evaluar_proveedores] OK | 1.3ms
+2026-10-25 01:10:52 | INFO     | [evaluar_proveedores] OK | 3.8ms
+2026-10-25 01:10:52 | INFO     | [evaluar_proveedores] OK | 3.2ms
+2026-10-25 01:10:59 | INFO     | Base de datos inicializada: C:\Users\ASUS\OneDrive\Documents\Ujap\9vo semestre\Ing en sofware\Unidad 2\inventario_agente\datos\inventario.db
+2026-10-25 01:12:41 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 01:12:51 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 01:14:21 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 01:14:41 | INFO     | [ReAct] Consulta: 'Realiza una auditoría exhaustiva de la base de datos para detectar y corregir cu...'
+2026-10-25 01:14:41 | WARNING  | [ReAct] Cuota agotada en modelo primario. Cambiando a respaldo: gemini-2.0-flash
+2026-10-25 01:14:41 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-2.0-flash
+2026-10-25 01:14:41 | ERROR    | [ReAct] También falló el modelo de respaldo: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+2026-10-25 01:19:11 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.8-flash
+2026-10-25 01:19:11 | INFO     | [ReAct] Consulta: 'Audita la base de datos'
+2026-10-25 01:19:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 13
+2026-10-25 01:19:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 13
+2026-10-25 01:19:51 | INFO     | [auditar_bd] OK | 9.2ms
+2026-10-25 01:20:50 | INFO     | [ReAct] Completado: 1 paso(s) | 99264.1ms total
+2026-10-25 01:27:51 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.8-flash
+2026-10-25 01:27:51 | INFO     | [ReAct] Consulta: 'Hola'
+2026-10-25 01:28:28 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-2.5-flash
+2026-10-25 01:28:50 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-flash-latest
+2026-10-25 01:30:06 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.5-flash
+2026-10-25 01:30:06 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.7-flash
+2026-10-25 01:30:35 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.8-flash

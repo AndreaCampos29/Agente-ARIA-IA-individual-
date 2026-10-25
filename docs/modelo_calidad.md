@@ -13,11 +13,11 @@
 
 | # | Componente | Implementación | Archivo |
 |---|---|---|---|
-| 1 | **Cerebro (LLM)** | Google Gemini 1.5 Flash | `agent_core.py` |
+| 1 | **Cerebro (LLM)** | Google Gemini 3.6 Flash | `agent_core.py` |
 | 2 | **Bucle de Control** | ReAct nativo Python (`while`) | `agent_core.py → ejecutar_react()` |
 | 3 | **Herramientas** | 6 funciones Python con tipado | `tools.py` |
 | 4 | **Memoria** | `st.session_state` + SQLite | `app.py` + `datos/inventario.db` |
-| 5 | **Interfaz** | Streamlit (4 tabs) | `app.py` |
+| 5 | **Interfaz** | Streamlit (5 tabs): Consola de Operaciones · Visor Transaccional · Auditoría del Sistema · Gestión de Órdenes · Arquitectura del Sistema | `app.py` |
 | 6 | **Calidad** | Loguru + pytest + try/except | `test_calidad.py` + `logs/` |
 | 7 | **Infraestructura** | venv + `.env` + `requirements.txt` | Raíz del proyecto |
 
@@ -143,7 +143,7 @@ streamlit run app.py
 
 ```
 inventario_agente/
-├── app.py              # UI Streamlit (4 tabs)
+├── app.py              # UI Streamlit (5 tabs: Consola · Visor Transaccional · Auditoría · Gestión de Órdenes · Arquitectura)
 ├── agent_core.py       # Bucle ReAct + Gemini
 ├── tools.py            # 6 herramientas del agente
 ├── init_db.py          # Inicialización y reset de BD

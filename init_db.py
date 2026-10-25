@@ -1,17 +1,11 @@
 """
-init_db.py — Inicialización y reset de la base de datos de inventario.
+init_db.py — Inicialización de la base de datos de inventario ARIA.
 
 Uso:
-    python init_db.py
-
-ESCENARIO DE PRUEBA INYECTADO:
-  - 3 productos con stock bajo el mínimo (para prueba de reabastecimiento)
-  - 1 producto con precio negativo (anomalía para auditoría self-healing)
-  - 1 producto con cantidad negativa (anomalía para auditoría self-healing)
-  - 3 proveedores por producto crítico con distintos precios y tiempos
-
-Reset rápido: volver a correr este script restaura el estado "crítico" original.
+    python init_db.py          # Solo crea el schema (BD vacía)
+    python init_db.py --demo   # Crea el schema + escenario de prueba completo
 """
+import sys
 import sqlite3
 from loguru import logger
 from config import BD_PATH
@@ -124,17 +118,18 @@ def _insertar_datos(cur: sqlite3.Cursor):
     )
 
 
-def inicializar(silencioso: bool = False):
+def inicializar(silencioso: bool = False, con_demo: bool = False):
     """
-    Crea la BD y la puebla con el escenario de prueba.
-    Llama a esta función para hacer un reset completo del entorno.
+    Crea la BD con el schema limpio.
+    Si `con_demo=True` también inyecta el escenario de prueba completo.
     """
     try:
         BD_PATH.parent.mkdir(parents=True, exist_ok=True)
         con = sqlite3.connect(str(BD_PATH))
         cur = con.cursor()
         _crear_tablas(cur)
-        _insertar_datos(cur)
+        if con_demo:
+            _insertar_datos(cur)
         con.commit()
         con.close()
 
@@ -144,11 +139,14 @@ def inicializar(silencioso: bool = False):
             print("  [OK]  ARIA - Base de datos lista")
             print(f"{'='*55}")
             print(f"  Ruta: {BD_PATH}")
-            print("  Datos insertados:")
-            print("    -> 3 productos CRITICOS  (stock bajo minimo)")
-            print("    -> 2 productos ANOMALOS  (precio negativo, cant. negativa)")
-            print("    -> 3 productos NORMALES  (stock suficiente)")
-            print("    -> 13 proveedores        (distintos precios y tiempos)")
+            if con_demo:
+                print("  Datos insertados (modo demo):")
+                print("    -> 3 productos CRITICOS  (stock bajo minimo)")
+                print("    -> 2 productos ANOMALOS  (precio negativo, cant. negativa)")
+                print("    -> 3 productos NORMALES  (stock suficiente)")
+                print("    -> 13 proveedores        (distintos precios y tiempos)")
+            else:
+                print("  Schema vacío creado. Sube tu inventario desde la app.")
             print(f"{'='*55}")
             print("  Siguiente paso: streamlit run app.py\n")
 
@@ -160,4 +158,5 @@ def inicializar(silencioso: bool = False):
 
 
 if __name__ == "__main__":
-    inicializar()
+    modo_demo = "--demo" in sys.argv
+    inicializar(con_demo=modo_demo)

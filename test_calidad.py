@@ -41,7 +41,7 @@ from tools import (
 @pytest.fixture(scope="session", autouse=True)
 def bd_inicial():
     """Inicializa la BD con el escenario de prueba antes de correr los tests."""
-    inicializar(silencioso=True)
+    inicializar(silencioso=True, con_demo=True)
     yield
     # No hacemos teardown: la BD queda lista para inspección manual
 
@@ -111,7 +111,7 @@ class TestAuditoria:
 
     def _reset(self):
         """Restaura el escenario con anomalías antes de cada verificación."""
-        inicializar(silencioso=True)
+        inicializar(silencioso=True, con_demo=True)
 
     def test_detecta_precio_negativo(self):
         """Debe detectar el Monitor Samsung con precio -199.99."""
@@ -163,7 +163,7 @@ class TestAuditoria:
             res = auditar_bd()
             assert "error" not in res, f"Retornó error inesperado: {res['error']}"
         finally:
-            inicializar(silencioso=True)  # Restaurar siempre
+            inicializar(silencioso=True, con_demo=True)  # Restaurar siempre
 
 
 # ─────────────────────────────────────────────────────────────────────────────
