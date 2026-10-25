@@ -409,7 +409,7 @@ def _proveedores() -> pd.DataFrame:
     try:
         con = sqlite3.connect(str(BD_PATH))
         df  = pd.read_sql_query(
-            """SELECT p.id, p.nombre AS proveedor, pr.nombre AS producto,
+            """SELECT p.id, p.id_producto, p.nombre AS proveedor, pr.nombre AS producto,
                       p.precio_oferta, p.tiempo_entrega_dias, p.calificacion, p.activo
                FROM proveedores p
                LEFT JOIN productos pr ON p.id_producto = pr.id
@@ -1589,12 +1589,15 @@ with tab_proveedores:
         st.markdown('<div class="sect-label">Evaluador Rápido de Cotizaciones</div>', unsafe_allow_html=True)
         col_prod, col_crit, col_btn = st.columns([3, 2, 2])
         prods_disponibles = sorted(df_p["producto"].dropna().unique().tolist())
+        # Map nombre -> id_producto para evitar lookup por LIKE que puede fallar
+        _prod_id_map = df_p.dropna(subset=["producto"]).drop_duplicates("producto").set_index("producto")["id_producto"].to_dict()
         prod_elegido = col_prod.selectbox("Producto a evaluar:", prods_disponibles, key="sb_eval_prod")
         criterio_elegido = col_crit.selectbox("Criterio:", ["mixto", "precio", "tiempo", "calificacion"], key="sb_eval_crit")
 
         if col_btn.button("Evaluar con ARIA", key="btn_eval_manual", use_container_width=True):
             import tools as t_eval
-            res_eval = t_eval.evaluar_proveedores(prod_elegido, criterio_elegido)
+            _id_prod_eval = int(_prod_id_map.get(prod_elegido, 0))
+            res_eval = t_eval.evaluar_proveedores(_id_prod_eval if _id_prod_eval else prod_elegido, criterio_elegido)
             if "error" in res_eval:
                 st.error(res_eval["error"])
             else:
