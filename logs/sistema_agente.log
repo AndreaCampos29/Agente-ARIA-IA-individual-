@@ -1016,3 +1016,4 @@ máximo es $100. Ajusta l...'
 2026-10-25 11:31:06 | INFO     | [evaluar_proveedores] OK | 1.7ms
 2026-10-25 11:31:06 | INFO     | [detectar_duplicados] OK | 4.9ms
 2026-10-25 11:31:06 | INFO     | [detectar_duplicados] OK | 5.5ms
+2026-10-25 11:34:10 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
