@@ -404,6 +404,24 @@ def _ordenes() -> pd.DataFrame:
         return pd.DataFrame()
 
 
+@st.cache_data(ttl=4)
+def _proveedores() -> pd.DataFrame:
+    try:
+        con = sqlite3.connect(str(BD_PATH))
+        df  = pd.read_sql_query(
+            """SELECT p.id, p.nombre AS proveedor, pr.nombre AS producto,
+                      p.precio_oferta, p.tiempo_entrega_dias, p.calificacion, p.activo
+               FROM proveedores p
+               LEFT JOIN productos pr ON p.id_producto = pr.id
+               ORDER BY pr.nombre, p.precio_oferta ASC""",
+            con
+        )
+        con.close()
+        return df
+    except Exception:
+        return pd.DataFrame()
+
+
 def _kpi() -> dict:
     df = _inventario()
     if df.empty:
@@ -420,6 +438,7 @@ def _limpiar_cache():
     _inventario.clear()
     _historial.clear()
     _ordenes.clear()
+    _proveedores.clear()
 
 
 def _cargar_archivo(archivo) -> dict:
@@ -527,6 +546,148 @@ def _cargar_archivo(archivo) -> dict:
         return {"ok": False, "error": str(e)}
 
 
+def _cargar_proveedores(archivo, reemplazar: bool = False) -> dict:
+    """
+    Procesa un archivo Excel o CSV con ofertas/cotizaciones de proveedores.
+    Permite acumular hasta un máximo de 4 proveedores simultáneos.
+    Asocia las ofertas exclusivamente a productos existentes en la tienda.
+    """
+    try:
+        if archivo.name.lower().endswith(".csv"):
+            df = pd.read_csv(archivo)
+        else:
+            df = pd.read_excel(archivo, engine="openpyxl")
+
+        def _norm_col(s: str) -> str:
+            for src, dst in [("-","_"),(" ","_"),("á","a"),("é","e"),("í","i"),
+                             ("ó","o"),("ú","u"),("ñ","n")]:
+                s = s.replace(src, dst)
+            return s.strip().lower()
+
+        df.columns = [_norm_col(c) for c in df.columns]
+
+        CAMPO_PROV = {
+            "proveedor": ["proveedor", "nombre_proveedor", "supplier", "vendor", "distribuidor", "empresa", "nombre"],
+            "producto":  ["producto", "nombre_producto", "item", "articulo", "product", "descripcion"],
+            "precio":    ["precio_oferta", "precio", "costo", "oferta", "price", "precio_unitario", "costo_unitario", "valor"],
+            "tiempo":    ["tiempo_entrega_dias", "tiempo_entrega", "dias_entrega", "dias", "entrega", "lead_time", "tiempo"],
+            "calif":     ["calificacion", "rating", "reputacion", "puntuacion", "estrellas", "score"]
+        }
+        col_map = {}
+        for campo, opciones in CAMPO_PROV.items():
+            for op in opciones:
+                if op in df.columns:
+                    col_map[campo] = op
+                    break
+
+        if "proveedor" not in col_map or "producto" not in col_map or "precio" not in col_map:
+            return {
+                "ok": False,
+                "error": "El archivo de proveedores debe incluir columnas reconocibles para 'proveedor', 'producto' y 'precio'."
+            }
+
+        def _s_str(row, col, d=""):
+            k = col_map.get(col)
+            v = str(row[k]).strip() if k else ""
+            return v if v.lower() not in ("nan", "none", "") else d
+
+        def _s_float(row, col, d=0.0):
+            k = col_map.get(col)
+            try: return float(row[k]) if k else d
+            except: return d
+
+        def _s_int(row, col, d=3):
+            k = col_map.get(col)
+            try: return int(float(row[k])) if k else d
+            except: return d
+
+        nombres_en_archivo = set()
+        for _, row in df.iterrows():
+            np = _s_str(row, "proveedor")
+            if np:
+                nombres_en_archivo.add(np)
+
+        if not nombres_en_archivo:
+            return {"ok": False, "error": "No se encontraron nombres de proveedores válidos en el archivo."}
+
+        con = sqlite3.connect(str(BD_PATH))
+        cur = con.cursor()
+
+        cur.execute("SELECT DISTINCT nombre FROM proveedores WHERE activo=1")
+        existentes = {r[0] for r in cur.fetchall()}
+
+        if reemplazar:
+            cur.execute("DELETE FROM proveedores")
+            existentes = set()
+        else:
+            total_futuro = len(existentes.union(nombres_en_archivo))
+            if total_futuro > 4:
+                con.close()
+                return {
+                    "ok": False,
+                    "error": (
+                        f"Límite alcanzado: El sistema permite un máximo de 4 proveedores. "
+                        f"Actualmente tienes {len(existentes)} ({', '.join(sorted(existentes))}) y el archivo incluye "
+                        f"{len(nombres_en_archivo)} ({', '.join(sorted(nombres_en_archivo))}). "
+                        f"Limpia proveedores anteriores para continuar."
+                    )
+                }
+
+            # Si el proveedor ya existía, refrescamos solo sus ofertas
+            for nom in nombres_en_archivo:
+                cur.execute("DELETE FROM proveedores WHERE LOWER(nombre) = LOWER(?)", (nom.strip(),))
+
+        provs_creados = 0
+        prods_omitidos = 0
+
+        for _, row in df.iterrows():
+            nom_prov = _s_str(row, "proveedor")
+            nom_prod = _s_str(row, "producto")
+            precio   = _s_float(row, "precio")
+            tiempo   = _s_int(row, "tiempo", 3)
+            calif    = _s_float(row, "calif", 4.5)
+
+            if not nom_prov or not nom_prod or precio <= 0:
+                continue
+
+            cur.execute("SELECT id FROM productos WHERE LOWER(TRIM(nombre)) = LOWER(?)", (nom_prod.strip(),))
+            fila = cur.fetchone()
+            if not fila:
+                cur.execute("SELECT id FROM productos WHERE LOWER(nombre) LIKE LOWER(?)", (f"%{nom_prod.strip()}%",))
+                fila = cur.fetchone()
+
+            if fila:
+                id_prod = fila[0]
+                cur.execute(
+                    """INSERT INTO proveedores (nombre, id_producto, precio_oferta, tiempo_entrega_dias, calificacion, activo)
+                       VALUES (?, ?, ?, ?, ?, 1)""",
+                    (nom_prov.strip(), id_prod, precio, tiempo, calif)
+                )
+                provs_creados += 1
+            else:
+                prods_omitidos += 1
+
+        con.commit()
+        cur.execute("SELECT DISTINCT nombre FROM proveedores WHERE activo=1")
+        total_activos = [r[0] for r in cur.fetchall()]
+        con.close()
+
+        if provs_creados == 0:
+            return {
+                "ok": False,
+                "error": "Ningún artículo del archivo del proveedor coincide con los productos de tu inventario actual."
+            }
+
+        return {
+            "ok": True,
+            "proveedores": provs_creados,
+            "productos_omitidos": prods_omitidos,
+            "proveedores_activos": total_activos
+        }
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+
 # ─── SIDEBAR ──────────────────────────────────────────────────────────────────
 
 with st.sidebar:
@@ -608,12 +769,12 @@ with st.sidebar:
     st.markdown("<hr>", unsafe_allow_html=True)
 
     # ─ Carga de datos del negocio (RNF04 / ingesta Excel) ─────────────────
-    st.markdown('<div class="sect-label">Datos del Negocio</div>',
+    st.markdown('<div class="sect-label">Inventario de la Tienda</div>',
                 unsafe_allow_html=True)
     st.markdown(
         '<div class="info-box" style="margin-bottom:10px;font-size:12px;">'
-        'Sube tu inventario en <code>.xlsx</code> o <code>.csv</code>.<br>'
-        'Columnas reconocidas: <code>nombre</code>, <code>categoria</code>, '
+        'Sube tu catálogo en <code>.xlsx</code> o <code>.csv</code>.<br>'
+        'Columnas reconocidas: <code>producto</code>, <code>categoria</code>, '
         '<code>stock</code>, <code>precio</code>, <code>ventas</code>.'
         '</div>',
         unsafe_allow_html=True
@@ -626,7 +787,7 @@ with st.sidebar:
     )
     if _archivo is not None:
         if st.session_state.get("_archivo_cargado") != _archivo.name:
-            with st.spinner("Importando datos..."):
+            with st.spinner("Importando inventario..."):
                 _res = _cargar_archivo(_archivo)
             if _res["ok"]:
                 st.session_state["_archivo_cargado"] = _archivo.name
@@ -634,16 +795,23 @@ with st.sidebar:
                     f"{_res['productos']} productos importados — "
                     f"{len(_res.get('columnas_mapeadas', []))} columnas mapeadas."
                 )
-                # Reset completo de la sesión anterior
                 _limpiar_cache()
-                st.session_state.mensajes = []          # limpiar chat
-                if st.session_state.get("agente_ok"):   # reiniciar agente
+                st.session_state.mensajes = []
+                if st.session_state.get("agente_ok"):
                     st.session_state.chat = crear_agente()
                 st.rerun()
             else:
                 st.error(_res["error"])
+
     if st.session_state.get("_import_msg"):
         st.success(st.session_state["_import_msg"])
+
+    st.markdown(
+        '<div style="font-size:12px;color:#9ca3af;margin-top:8px;">'
+        'Para cotizaciones de proveedores (hasta 4), usa la pestaña <b>Gestión de Proveedores</b>.'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
     st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -663,9 +831,10 @@ with st.sidebar:
 
 # ─── TABS PRINCIPALES ─────────────────────────────────────────────────────────
 
-tab_consola, tab_visor, tab_auditoria, tab_ordenes, tab_arq = st.tabs([
+tab_consola, tab_visor, tab_proveedores, tab_auditoria, tab_ordenes, tab_arq = st.tabs([
     "Consola de Operaciones",
     "Visor Transaccional",
+    "Gestión de Proveedores",
     "Auditoría del Sistema",
     "Gestión de Órdenes",
     "Arquitectura del Sistema",
@@ -1298,7 +1467,152 @@ with tab_visor:
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 3 — AUDITORIA DEL SISTEMA
+# TAB 3 — GESTIÓN DE PROVEEDORES
+# ══════════════════════════════════════════════════════════════
+with tab_proveedores:
+    col_h, col_r, col_limp = st.columns([4, 1, 1.2])
+    col_h.markdown(
+        '<div class="page-title">Gestión y Comparativa de Proveedores</div>'
+        '<div class="page-sub">Comparación simultánea de ofertas, tiempos de entrega y reputación (máximo 4 proveedores)</div>',
+        unsafe_allow_html=True
+    )
+    if col_r.button("Actualizar", key="ref_prov"):
+        _limpiar_cache()
+        st.rerun()
+
+    if col_limp.button("Limpiar Proveedores", key="btn_limp_prov"):
+        try:
+            con_l = sqlite3.connect(str(BD_PATH))
+            con_l.execute("DELETE FROM proveedores")
+            con_l.commit()
+            con_l.close()
+            _limpiar_cache()
+            st.success("Se eliminaron todos los proveedores registrados.")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Error al limpiar: {e}")
+
+    st.markdown("<hr>", unsafe_allow_html=True)
+
+    df_p = _proveedores()
+    provs_unicos = sorted(df_p["proveedor"].dropna().unique().tolist()) if not df_p.empty else []
+    cant_provs = len(provs_unicos)
+
+    # ── Sección de Carga de Archivos de Cotizaciones ──
+    col_up, col_info = st.columns([3, 2])
+    with col_up:
+        st.markdown(
+            f'<div class="sect-label">Cargar Cotizaciones ({cant_provs} / 4 proveedores registrados)</div>',
+            unsafe_allow_html=True
+        )
+        if cant_provs >= 4:
+            st.warning("Límite de 4 proveedores alcanzado. Usa 'Limpiar Proveedores' si deseas cambiar de proveedores.")
+        else:
+            _up_prov_file = st.file_uploader(
+                "Subir cotización (.xlsx o .csv)",
+                type=["xlsx", "csv"],
+                key="fu_tab_prov",
+                help="Columnas: proveedor, producto, precio, tiempo_entrega, calificacion"
+            )
+            if _up_prov_file is not None:
+                if st.session_state.get("_last_tab_prov_file") != _up_prov_file.name:
+                    with st.spinner("Procesando cotización..."):
+                        res_p = _cargar_proveedores(_up_prov_file)
+                    if res_p["ok"]:
+                        st.session_state["_last_tab_prov_file"] = _up_prov_file.name
+                        msg_p = f"{res_p['proveedores']} ofertas vinculadas exitosamente."
+                        if res_p.get("productos_omitidos"):
+                            msg_p += f" ({res_p['productos_omitidos']} artículos omitidos porque no los vendes)."
+                        st.success(msg_p)
+                        _limpiar_cache()
+                        st.rerun()
+                    else:
+                        st.error(res_p["error"])
+
+    with col_info:
+        st.markdown('<div class="sect-label">Proveedores Registrados</div>', unsafe_allow_html=True)
+        if provs_unicos:
+            for p_nombre in provs_unicos:
+                df_filtro = df_p[df_p["proveedor"] == p_nombre]
+                n_items = len(df_filtro)
+                t_prom = df_filtro["tiempo_entrega_dias"].mean()
+                cal_prom = df_filtro["calificacion"].mean()
+                st.markdown(
+                    f'<div style="background:#1a1a26;border:1px solid #374151;border-radius:6px;padding:10px 14px;margin-bottom:8px;">'
+                    f'<div style="font-weight:700;color:#60a5fa;font-size:14px;">{p_nombre}</div>'
+                    f'<div style="font-size:12px;color:#9ca3af;margin-top:2px;">'
+                    f'{n_items} productos cotizados · {t_prom:.1f} días entrega prom. · {cal_prom:.1f} ★'
+                    f'</div></div>',
+                    unsafe_allow_html=True
+                )
+        else:
+            st.info("No hay proveedores cargados actualmente. Sube hasta 4 archivos de cotizaciones a la izquierda.")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    if df_p.empty:
+        st.markdown(
+            '<div style="display:flex;flex-direction:column;align-items:center;'
+            'justify-content:center;padding:48px 24px;text-align:center;">'
+            '<div style="font-size:18px;font-weight:700;color:#d1d5db;margin-bottom:8px;">'
+            'Sin cotizaciones registradas</div>'
+            '<div style="font-size:14px;color:#6b7280;max-width:440px;line-height:1.6;">'
+            'Sube las cotizaciones de tus proveedores para que ARIA pueda comparar precios, '
+            'tiempos de entrega y recomendarte el mejor.'
+            '</div></div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.markdown('<div class="sect-label">Matriz Comparativa de Ofertas por Producto</div>', unsafe_allow_html=True)
+
+        cols_mostrar = ["producto", "proveedor", "precio_oferta", "tiempo_entrega_dias", "calificacion"]
+        df_mostrar = df_p[cols_mostrar].copy()
+        df_mostrar.columns = ["Producto", "Proveedor", "Precio Oferta", "Tiempo Entrega (Días)", "Calificación"]
+        fmt_prov = {
+            "Precio Oferta": "${:,.2f}",
+            "Tiempo Entrega (Días)": "{:.0f}",
+            "Calificación": "{:.1f} / 5.0"
+        }
+        styled_prov = (
+            df_mostrar.style
+            .format(fmt_prov)
+            .set_properties(**{"font-size": "14px", "font-family": "Inter, sans-serif"})
+            .set_properties(
+                subset=["Precio Oferta", "Tiempo Entrega (Días)", "Calificación"],
+                **{"text-align": "right"}
+            )
+        )
+        st.dataframe(styled_prov, use_container_width=True, hide_index=True)
+
+        # ── Evaluador Interactivo ──
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown('<div class="sect-label">Evaluador Rápido de Cotizaciones</div>', unsafe_allow_html=True)
+        col_prod, col_crit, col_btn = st.columns([3, 2, 2])
+        prods_disponibles = sorted(df_p["producto"].dropna().unique().tolist())
+        prod_elegido = col_prod.selectbox("Producto a evaluar:", prods_disponibles, key="sb_eval_prod")
+        criterio_elegido = col_crit.selectbox("Criterio:", ["mixto", "precio", "tiempo", "calificacion"], key="sb_eval_crit")
+
+        if col_btn.button("Evaluar con ARIA", key="btn_eval_manual", use_container_width=True):
+            import tools as t_eval
+            res_eval = t_eval.evaluar_proveedores(prod_elegido, criterio_elegido)
+            if "error" in res_eval:
+                st.error(res_eval["error"])
+            else:
+                recom = res_eval.get("proveedor_recomendado", "")
+                precio = res_eval.get("precio", 0)
+                tiempo = res_eval.get("tiempo_entrega", 0)
+                calif = res_eval.get("calificacion", 0)
+                st.success(
+                    f"**Proveedor recomendado:** {recom}  \n"
+                    f"- Precio cotizado: **${precio:,.2f}**  \n"
+                    f"- Tiempo de entrega: **{tiempo} días**  \n"
+                    f"- Calificación: **{calif:.1f} / 5.0**  \n"
+                    f"- Puntuación técnica: **{res_eval.get('score', 0):.2f}**"
+                )
+
+
+# ══════════════════════════════════════════════════════════════
+# TAB 4 — AUDITORIA DEL SISTEMA
 # ══════════════════════════════════════════════════════════════
 with tab_auditoria:
     col_h, col_r = st.columns([5, 1])

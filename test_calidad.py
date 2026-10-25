@@ -33,6 +33,7 @@ from tools import (
     generar_pdf,
     evaluar_proveedores,
     actualizar_inventario,
+    detectar_duplicados,
 )
 
 
@@ -327,3 +328,32 @@ class TestProveedores:
         """Un ID sin proveedores debe retornar {'error': ...} sin lanzar excepción."""
         res = evaluar_proveedores(9999, "mixto")
         assert "error" in res, "Debería retornar error para producto inexistente"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 8. DETECCIÓN DE DUPLICADOS — Similitud de texto
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestDuplicados:
+    """Verifica detección de productos repetidos con nombres similares."""
+
+    def test_estructura_retorno(self):
+        res = detectar_duplicados()
+        assert "grupos_duplicados" in res
+        assert "total_grupos" in res
+        assert isinstance(res["grupos_duplicados"], list)
+
+    def test_detecta_duplicado_simulado(self):
+        con = sqlite3.connect(str(BD_PATH))
+        con.execute(
+            "INSERT INTO productos (nombre, categoria, cantidad_actual, precio_unitario) "
+            "VALUES ('Laptop Dell XPS 15 Pulgadas', 'Electrónica', 2, 850.0)"
+        )
+        con.commit()
+        con.close()
+
+        res = detectar_duplicados(umbral=0.7)
+        assert res["total_grupos"] >= 1
+        nombres = [item["nombre"] for g in res["grupos_duplicados"] for item in g]
+        assert any("Laptop Dell XPS 15" in n for n in nombres)
+

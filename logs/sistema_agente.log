@@ -669,3 +669,350 @@ máximo es $100. Ajusta l...'
 2026-10-25 01:30:06 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.5-flash
 2026-10-25 01:30:06 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.7-flash
 2026-10-25 01:30:35 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.8-flash
+2026-10-25 10:15:54 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 10:16:46 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 10:16:46 | INFO     | [ReAct] Consulta: 'hola'
+2026-10-25 10:16:55 | INFO     | [ReAct] Completado: 0 paso(s) | 8816.1ms total
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 3.2ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 1.8ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 2.9ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 1.9ms
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 7.3ms
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 7.2ms
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 5.2ms
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 7.5ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 1.1ms
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:17:52 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 5.7ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 13.0ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 10.4ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 16.5ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 2.0ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 63.4ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 1.5ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 10.3ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 14.3ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 2.8ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 12.2ms
+2026-10-25 10:17:52 | INFO     | [generar_pdf] OK | 39.6ms
+2026-10-25 10:17:52 | INFO     | [generar_pdf] OK | 26.0ms
+2026-10-25 10:17:52 | INFO     | [generar_pdf] OK | 18.7ms
+2026-10-25 10:17:52 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 2.3ms
+2026-10-25 10:17:52 | INFO     | [auditar_bd] OK | 5.6ms
+2026-10-25 10:17:52 | INFO     | [ajustar_presupuesto] OK | 14.2ms
+2026-10-25 10:17:53 | INFO     | [evaluar_proveedores] OK | 2.2ms
+2026-10-25 10:17:53 | INFO     | [actualizar_inventario] OK | 5.6ms
+2026-10-25 10:17:53 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:17:53 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:17:53 | INFO     | [evaluar_proveedores] OK | 1.4ms
+2026-10-25 10:17:53 | INFO     | [evaluar_proveedores] OK | 1.7ms
+2026-10-25 10:17:53 | INFO     | [evaluar_proveedores] OK | 3.6ms
+2026-10-25 10:17:59 | INFO     | [detectar_duplicados] OK | 2.5ms
+2026-10-25 10:18:14 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.8-flash
+2026-10-25 10:18:14 | INFO     | [ReAct] Consulta: 'di OK'
+2026-10-25 10:18:15 | ERROR    | [ReAct] Error inesperado: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-10-25 10:19:02 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-2.5-flash
+2026-10-25 10:19:02 | INFO     | [ReAct] Consulta: 'di OK'
+2026-10-25 10:19:03 | ERROR    | [ReAct] Error inesperado: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+2026-10-25 10:20:24 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.5-flash
+2026-10-25 10:20:24 | INFO     | [ReAct] Consulta: 'revisa si hay duplicados'
+2026-10-25 10:20:42 | INFO     | [detectar_duplicados] OK | 97.6ms
+2026-10-25 10:20:47 | INFO     | [detectar_duplicados] OK | 10.9ms
+2026-10-25 10:21:18 | INFO     | [ReAct] Completado: 2 paso(s) | 53963.3ms total
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 2.8ms
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 1.7ms
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 1.0ms
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 1.6ms
+2026-10-25 10:22:11 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 14.9ms
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 9.6ms
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 10.1ms
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 7.0ms
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 4.0ms
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:22:11 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 6.7ms
+2026-10-25 10:22:11 | INFO     | [ajustar_presupuesto] OK | 14.7ms
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-25 10:22:11 | INFO     | [ajustar_presupuesto] OK | 24.8ms
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 6.5ms
+2026-10-25 10:22:11 | INFO     | [ajustar_presupuesto] OK | 22.2ms
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 3.5ms
+2026-10-25 10:22:11 | INFO     | [ajustar_presupuesto] OK | 18.7ms
+2026-10-25 10:22:11 | INFO     | [auditar_bd] OK | 2.4ms
+2026-10-25 10:22:12 | INFO     | [ajustar_presupuesto] OK | 14.0ms
+2026-10-25 10:22:12 | INFO     | [auditar_bd] OK | 1.7ms
+2026-10-25 10:22:12 | INFO     | [ajustar_presupuesto] OK | 46.1ms
+2026-10-25 10:22:12 | INFO     | [auditar_bd] OK | 3.7ms
+2026-10-25 10:22:12 | INFO     | [ajustar_presupuesto] OK | 20.6ms
+2026-10-25 10:22:12 | INFO     | [generar_pdf] OK | 37.4ms
+2026-10-25 10:22:12 | INFO     | [generar_pdf] OK | 22.0ms
+2026-10-25 10:22:12 | INFO     | [generar_pdf] OK | 18.2ms
+2026-10-25 10:22:12 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:22:12 | INFO     | [auditar_bd] OK | 1.8ms
+2026-10-25 10:22:12 | INFO     | [auditar_bd] OK | 1.8ms
+2026-10-25 10:22:12 | INFO     | [ajustar_presupuesto] OK | 11.1ms
+2026-10-25 10:22:12 | INFO     | [evaluar_proveedores] OK | 1.5ms
+2026-10-25 10:22:12 | INFO     | [actualizar_inventario] OK | 10.2ms
+2026-10-25 10:22:12 | INFO     | [analizar_agotamiento] OK | 1.5ms
+2026-10-25 10:22:12 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 10:22:12 | INFO     | [evaluar_proveedores] OK | 1.5ms
+2026-10-25 10:22:12 | INFO     | [evaluar_proveedores] OK | 3.5ms
+2026-10-25 10:22:12 | INFO     | [evaluar_proveedores] OK | 6.3ms
+2026-10-25 10:22:12 | INFO     | [detectar_duplicados] OK | 9.1ms
+2026-10-25 10:22:12 | INFO     | [detectar_duplicados] OK | 10.3ms
+2026-10-25 10:24:57 | INFO     | Base de datos inicializada: C:\Users\Valen\Documents\9 noveno\ing software\Agente-ARIA-IA-individual-\datos\inventario.db
+2026-10-25 10:26:43 | INFO     | Base de datos inicializada: C:\Users\Valen\Documents\9 noveno\ing software\Agente-ARIA-IA-individual-\datos\inventario.db
+2026-10-25 10:31:07 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 10:32:20 | INFO     | [ReAct] Consulta: '"Audita la base de datos y corrige las anomalías que encuentres."'
+2026-10-25 10:32:21 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:32:21 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:32:21 | INFO     | [auditar_bd] OK | 20.8ms
+2026-10-25 10:32:37 | INFO     | [ReAct] Completado: 1 paso(s) | 17134.9ms total
+2026-10-25 10:46:04 | INFO     | [ReAct] Consulta: 'Revisa si existen productos duplicados o con nombres similares en el inventario.'
+2026-10-25 10:46:06 | INFO     | [detectar_duplicados] OK | 3.6ms
+2026-10-25 10:46:16 | INFO     | [detectar_duplicados] OK | 3.7ms
+2026-10-25 10:46:19 | INFO     | [ReAct] Completado: 2 paso(s) | 14361.3ms total
+2026-10-25 10:47:49 | INFO     | [ReAct] Consulta: 'Genera una orden de compra para reabastecer los productos críticos con el mejor ...'
+2026-10-25 10:47:53 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 10:47:53 | INFO     | [ajustar_presupuesto] OK | 17.6ms
+2026-10-25 10:47:55 | INFO     | [evaluar_proveedores] OK | 2.9ms
+2026-10-25 10:47:57 | INFO     | [evaluar_proveedores] OK | 0.9ms
+2026-10-25 10:48:00 | INFO     | [generar_pdf] OK | 27.2ms
+2026-10-25 10:48:02 | INFO     | [ReAct] Completado: 4 paso(s) | 13538.9ms total
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.8ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.8ms
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 8.0ms
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 11.3ms
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 10.9ms
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 7.4ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 1.7ms
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 10:58:33 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 6.3ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 15.9ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 2.3ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 10.8ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 12.8ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 1.5ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 13.2ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 2.4ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 12.5ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 3.1ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 11.3ms
+2026-10-25 10:58:33 | INFO     | [auditar_bd] OK | 1.7ms
+2026-10-25 10:58:33 | INFO     | [ajustar_presupuesto] OK | 9.2ms
+2026-10-25 10:58:33 | INFO     | [generar_pdf] OK | 19.6ms
+2026-10-25 10:58:33 | INFO     | [generar_pdf] OK | 23.1ms
+2026-10-25 10:58:33 | INFO     | [generar_pdf] OK | 16.9ms
+2026-10-25 10:58:33 | INFO     | [analizar_agotamiento] OK | 1.4ms
+2026-10-25 10:58:34 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 10:58:34 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 10:58:34 | INFO     | [ajustar_presupuesto] OK | 9.8ms
+2026-10-25 10:58:34 | INFO     | [evaluar_proveedores] OK | 1.7ms
+2026-10-25 10:58:34 | INFO     | [actualizar_inventario] OK | 1.9ms
+2026-10-25 10:58:34 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 10:58:34 | INFO     | [analizar_agotamiento] OK | 1.4ms
+2026-10-25 10:58:34 | INFO     | [evaluar_proveedores] OK | 1.2ms
+2026-10-25 10:58:34 | INFO     | [evaluar_proveedores] OK | 1.7ms
+2026-10-25 10:58:34 | INFO     | [evaluar_proveedores] OK | 1.3ms
+2026-10-25 10:58:34 | INFO     | [detectar_duplicados] OK | 5.8ms
+2026-10-25 10:58:34 | INFO     | [detectar_duplicados] OK | 5.4ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 2.7ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 1.5ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 1.6ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:01:51 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 9.0ms
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 6.4ms
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 7.0ms
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 10.2ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 2.1ms
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:01:51 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 6.4ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 15.1ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 1.8ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 9.5ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 9.3ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 9.4ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 9.1ms
+2026-10-25 11:01:51 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 11:01:51 | INFO     | [ajustar_presupuesto] OK | 9.8ms
+2026-10-25 11:01:52 | INFO     | [auditar_bd] OK | 1.4ms
+2026-10-25 11:01:52 | INFO     | [ajustar_presupuesto] OK | 9.7ms
+2026-10-25 11:01:52 | INFO     | [generar_pdf] OK | 24.5ms
+2026-10-25 11:01:52 | INFO     | [generar_pdf] OK | 17.4ms
+2026-10-25 11:01:52 | INFO     | [generar_pdf] OK | 15.4ms
+2026-10-25 11:01:52 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 11:01:52 | INFO     | [auditar_bd] OK | 1.5ms
+2026-10-25 11:01:52 | INFO     | [auditar_bd] OK | 2.1ms
+2026-10-25 11:01:52 | INFO     | [ajustar_presupuesto] OK | 10.1ms
+2026-10-25 11:01:52 | INFO     | [evaluar_proveedores] OK | 2.0ms
+2026-10-25 11:01:52 | INFO     | [actualizar_inventario] OK | 2.6ms
+2026-10-25 11:01:52 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 11:01:52 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:01:52 | INFO     | [evaluar_proveedores] OK | 1.5ms
+2026-10-25 11:01:52 | INFO     | [evaluar_proveedores] OK | 1.7ms
+2026-10-25 11:01:52 | INFO     | [evaluar_proveedores] OK | 1.6ms
+2026-10-25 11:01:52 | INFO     | [detectar_duplicados] OK | 4.8ms
+2026-10-25 11:01:52 | INFO     | [detectar_duplicados] OK | 5.2ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 5.8ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 1.0ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 1.4ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 1.4ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 1.5ms
+2026-10-25 11:02:00 | INFO     | [evaluar_proveedores] OK | 3.3ms
+2026-10-25 11:04:57 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 2.5ms
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 2.0ms
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 5.1ms
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 2.3ms
+2026-10-25 11:05:54 | INFO     | [analizar_agotamiento] OK | 1.9ms
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 9.2ms
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 10.1ms
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 6.8ms
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 6.3ms
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 4.2ms
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:05:54 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 10.6ms
+2026-10-25 11:05:54 | INFO     | [ajustar_presupuesto] OK | 39.2ms
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 1.5ms
+2026-10-25 11:05:54 | INFO     | [ajustar_presupuesto] OK | 9.3ms
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 2.5ms
+2026-10-25 11:05:54 | INFO     | [ajustar_presupuesto] OK | 15.4ms
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 11:05:54 | INFO     | [ajustar_presupuesto] OK | 15.1ms
+2026-10-25 11:05:54 | INFO     | [auditar_bd] OK | 3.2ms
+2026-10-25 11:05:55 | INFO     | [ajustar_presupuesto] OK | 13.9ms
+2026-10-25 11:05:55 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 11:05:55 | INFO     | [ajustar_presupuesto] OK | 12.2ms
+2026-10-25 11:05:55 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 11:05:55 | INFO     | [ajustar_presupuesto] OK | 9.1ms
+2026-10-25 11:05:55 | INFO     | [generar_pdf] OK | 22.1ms
+2026-10-25 11:05:55 | INFO     | [generar_pdf] OK | 17.7ms
+2026-10-25 11:05:55 | INFO     | [generar_pdf] OK | 17.8ms
+2026-10-25 11:05:55 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 11:05:55 | INFO     | [auditar_bd] OK | 1.6ms
+2026-10-25 11:05:55 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 11:05:55 | INFO     | [ajustar_presupuesto] OK | 12.1ms
+2026-10-25 11:05:55 | INFO     | [evaluar_proveedores] OK | 3.7ms
+2026-10-25 11:05:55 | INFO     | [actualizar_inventario] OK | 1.2ms
+2026-10-25 11:05:55 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:05:55 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:05:55 | INFO     | [evaluar_proveedores] OK | 1.3ms
+2026-10-25 11:05:55 | INFO     | [evaluar_proveedores] OK | 1.8ms
+2026-10-25 11:05:55 | INFO     | [evaluar_proveedores] OK | 5.0ms
+2026-10-25 11:05:55 | INFO     | [detectar_duplicados] OK | 4.1ms
+2026-10-25 11:05:55 | INFO     | [detectar_duplicados] OK | 6.2ms
+2026-10-25 11:07:41 | INFO     | [crear_agente] Iniciando sesión | modelo: gemini-3.6-flash
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 1.7ms
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 1.7ms
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 24.4ms
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 2.0ms
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 2.4ms
+2026-10-25 11:31:05 | INFO     | [analizar_agotamiento] OK | 1.4ms
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:31:05 | INFO     | [auditar_bd] OK | 21.9ms
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:31:05 | INFO     | [auditar_bd] OK | 9.2ms
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:31:05 | INFO     | [auditar_bd] OK | 6.5ms
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:31:05 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:31:05 | INFO     | [auditar_bd] OK | 7.2ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 4.4ms
+2026-10-25 11:31:06 | WARNING  | [auditar_bd] Cantidad negativa en producto ID 5
+2026-10-25 11:31:06 | WARNING  | [auditar_bd] Precio inválido en producto ID 4
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 6.5ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 15.6ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 1.9ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 9.9ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 1.8ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 9.7ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 2.0ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 9.9ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 2.8ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 19.2ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 2.3ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 14.6ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 22.1ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 35.9ms
+2026-10-25 11:31:06 | INFO     | [generar_pdf] OK | 29.5ms
+2026-10-25 11:31:06 | INFO     | [generar_pdf] OK | 19.9ms
+2026-10-25 11:31:06 | INFO     | [generar_pdf] OK | 16.4ms
+2026-10-25 11:31:06 | INFO     | [analizar_agotamiento] OK | 1.1ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 1.7ms
+2026-10-25 11:31:06 | INFO     | [auditar_bd] OK | 1.8ms
+2026-10-25 11:31:06 | INFO     | [ajustar_presupuesto] OK | 9.8ms
+2026-10-25 11:31:06 | INFO     | [evaluar_proveedores] OK | 1.5ms
+2026-10-25 11:31:06 | INFO     | [actualizar_inventario] OK | 1.8ms
+2026-10-25 11:31:06 | INFO     | [analizar_agotamiento] OK | 1.2ms
+2026-10-25 11:31:06 | INFO     | [analizar_agotamiento] OK | 1.3ms
+2026-10-25 11:31:06 | INFO     | [evaluar_proveedores] OK | 1.6ms
+2026-10-25 11:31:06 | INFO     | [evaluar_proveedores] OK | 1.8ms
+2026-10-25 11:31:06 | INFO     | [evaluar_proveedores] OK | 1.7ms
+2026-10-25 11:31:06 | INFO     | [detectar_duplicados] OK | 4.9ms
+2026-10-25 11:31:06 | INFO     | [detectar_duplicados] OK | 5.5ms

@@ -40,14 +40,13 @@ _TOOLS = [
         ),
         types.FunctionDeclaration(
             name="evaluar_proveedores",
-            description="Compara proveedores de un producto y recomienda el mejor. Criterios: 'precio', 'tiempo', 'calificacion', 'mixto'.",
+            description="Compara proveedores de un producto y recomienda el mejor. Si no se especifica producto o es 'todos', evalúa todos los productos con ofertas. Criterios: 'precio', 'tiempo', 'calificacion', 'mixto'.",
             parameters=types.Schema(
                 type="OBJECT",
                 properties={
-                    "id_producto": types.Schema(type="INTEGER", description="ID del producto a evaluar"),
+                    "id_producto": types.Schema(type="STRING", description="ID numérico o nombre del producto (o 'todos')"),
                     "criterio":    types.Schema(type="STRING",  description="Criterio de selección: precio, tiempo, calificacion o mixto")
-                },
-                required=["id_producto"]
+                }
             )
         ),
         types.FunctionDeclaration(
@@ -156,7 +155,7 @@ def _despachar(nombre: str, args: dict):
     mapa = {
         "analizar_agotamiento":  lambda a: t.analizar_agotamiento(),
         "evaluar_proveedores":   lambda a: t.evaluar_proveedores(
-                                     int(a.get("id_producto", 1)),
+                                     a.get("id_producto", "todos"),
                                      str(a.get("criterio", "mixto"))
                                  ),
         "auditar_bd":            lambda a: t.auditar_bd(),

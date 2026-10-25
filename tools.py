@@ -117,26 +117,63 @@ def analizar_agotamiento() -> dict:
 
 # ─── Herramienta 2 ───────────────────────────────────────────────────────────
 
-def evaluar_proveedores(id_producto: int, criterio: str = "mixto") -> dict:
+def evaluar_proveedores(id_producto: int | str = 0, criterio: str = "mixto") -> dict:
     """
     Compara proveedores de un producto y recomienda el mejor según el criterio.
+    Acepta ID numérico, nombre aproximado del producto, o 0/'todos' para evaluar el catálogo completo.
     Criterios disponibles: 'precio', 'tiempo', 'calificacion', 'mixto'.
     El criterio 'mixto' pondera: 40% precio, 30% tiempo de entrega, 30% calificación.
     """
     inicio = time.time()
     try:
         with _con() as con:
-            prod = con.execute("SELECT nombre FROM productos WHERE id=?", (id_producto,)).fetchone()
+            prod_id_int = None
+            if isinstance(id_producto, int) and id_producto > 0:
+                prod_id_int = id_producto
+            elif isinstance(id_producto, str) and id_producto.strip().isdigit() and int(id_producto) > 0:
+                prod_id_int = int(id_producto)
+            elif isinstance(id_producto, str) and id_producto.strip() and id_producto.lower() not in ("0", "todos", "all"):
+                busqueda = f"%{id_producto.strip()}%"
+                fila_prod = con.execute(
+                    "SELECT id, nombre FROM productos WHERE LOWER(nombre) LIKE LOWER(?) LIMIT 1",
+                    (busqueda,)
+                ).fetchone()
+                if fila_prod:
+                    prod_id_int = fila_prod["id"]
+
+            # Si se solicita evaluar todos los productos con proveedores
+            if not prod_id_int and str(id_producto).lower() in ("0", "todos", "all", ""):
+                prods_con_prov = con.execute(
+                    "SELECT DISTINCT id_producto FROM proveedores WHERE activo=1"
+                ).fetchall()
+                if not prods_con_prov:
+                    return {"error": "Sin proveedores activos registrados en la base de datos"}
+                evaluaciones = []
+                for fila in prods_con_prov:
+                    ev = evaluar_proveedores(fila["id_producto"], criterio)
+                    if "error" not in ev:
+                        evaluaciones.append(ev)
+                return {
+                    "tipo": "evaluacion_general",
+                    "criterio": criterio,
+                    "total_productos": len(evaluaciones),
+                    "recomendaciones": evaluaciones
+                }
+
+            if not prod_id_int:
+                return {"error": f"Sin proveedores activos para producto {id_producto}"}
+
+            prod = con.execute("SELECT nombre FROM productos WHERE id=?", (prod_id_int,)).fetchone()
             provs = con.execute(
                 """SELECT id, nombre, precio_oferta, tiempo_entrega_dias, calificacion
                    FROM proveedores WHERE id_producto=? AND activo=1""",
-                (id_producto,)
+                (prod_id_int,)
             ).fetchall()
 
         if not provs:
             return {"error": f"Sin proveedores activos para producto {id_producto}"}
 
-        nombre_prod = prod["nombre"] if prod else f"ID {id_producto}"
+        nombre_prod = prod["nombre"] if prod else f"ID {prod_id_int}"
         lista = [dict(p) for p in provs]
 
         # Normalizar métricas (todo a escala 0-1, donde 1 es mejor)
